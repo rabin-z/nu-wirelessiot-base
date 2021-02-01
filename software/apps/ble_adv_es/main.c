@@ -37,9 +37,13 @@ int main(void) {
   simple_ble_app = simple_ble_init(&ble_config);
 
   // Start Advertising
-  uint8_t ble_data[BLE_GAP_ADV_SET_DATA_SIZE_MAX] = {0x02, 0x01, 0x06, 0x0B, 0x09, 0x52, 0x61, 0x62, 0x69, 0x6E, 0x20, 0x5A, 0x68, 0x61, 0x6F, 0x02, 0xFF, 0x00, 0x00,};
+  //uint8_t ble_data[BLE_GAP_ADV_SET_DATA_SIZE_MAX] = {0x02, 0x01, 0x06, 0x0A, 0x09, 0x52, 0x61, 0x62, 0x69, 0x6E, 0x5A, 0x68, 0x61, 0x6F, 0x02, 0xFF, 0x00, 0x00,};
+  
+  const char url_str[BLE_GAP_ADV_SET_DATA_SIZE_MAX] = { 'f', 'i', 'd', 'e', 'l', 'i', 't', 'y', '.', 'c', 'o', 'm',};
+  
+  simple_ble_es_with_name(url_str);
 
-  simple_ble_adv_raw(ble_data, 19);
+  //simple_ble_adv_raw(ble_data, 18);
   printf("Started BLE advertisements\n");
 
   while(1) {

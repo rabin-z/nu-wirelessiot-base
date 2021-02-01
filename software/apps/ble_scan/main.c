@@ -33,7 +33,17 @@ void ble_evt_adv_report(ble_evt_t const* p_ble_evt) {
   uint8_t* adv_buf = adv_report->data.p_data; // array of up to 31 bytes of advertisement payload data
   uint16_t adv_len = adv_report->data.len; // length of advertisement payload data
 
-  printf("Received an advertisement!\n");
+  if( 1 ){
+  	printf("Received an advertisement!\n");
+  	
+  	//printf("addr: %s\n", ble_addr);
+  	//printf("payload: %s\n", adv_buf);
+  	//printf("length: %i\n", adv_len);
+  	
+  	printf("message: %s\n", adv_buf[5, 6, 7, 8, 9]);
+  
+  }
+  
 }
 
 
